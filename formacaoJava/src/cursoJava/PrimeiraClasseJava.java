@@ -37,7 +37,7 @@ public class PrimeiraClasseJava {
         aluno1.setSerieMatriculado(serieMatriculado);
         aluno1.setNomeEscola(nomeEscola);
 
-        for (int posicao = 1; posicao <= 4; posicao++) {
+        for (int posicao = 1; posicao <= 8; posicao++) {
             String nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina " + posicao + ": ");
             String notaDisciplina = JOptionPane.showInputDialog("Digite a nota " + posicao + ": ");
 
@@ -50,9 +50,18 @@ public class PrimeiraClasseJava {
 
         int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina?");
 
-        if (escolha == 0) {
-            String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3 ou 4?");
-            aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+        if (escolha == 0) { // A opção SIM é igual a zero
+
+            int continuarRemover = 0;
+            int posicao = 1;
+
+            while (continuarRemover == 0) {
+                String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3 ou 4?");
+                aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+                posicao ++;
+                continuarRemover = JOptionPane.showConfirmDialog(null, "Continuar a remover?");
+            }
+
         }
 
         System.out.println("Nome: " + aluno1.getNome());
@@ -74,15 +83,15 @@ public class PrimeiraClasseJava {
         System.out.println("Resultado: " + aluno1.getAlunoAprovado2());
 
         /*
-         * 
+         *
          * // EQUALS e HASHCODE (Diferenciar e comparar objetos)
-         * 
+         *
          * Aluno aluno1 = new Aluno();
          * aluno1.setNome("Rodrigo");
-         * 
+         *
          * Aluno aluno2 = new Aluno();
          * aluno2.setNome("Rodrigo");
-         * 
+         *
          * if (aluno1.equals(aluno2)) {
          * System.out.println("Alunos são iguais.");
          * }else {

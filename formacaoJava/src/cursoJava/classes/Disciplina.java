@@ -2,7 +2,7 @@ package cursoJava.classes;
 
 /*
  * Essa CLASSE disciplina servirá para todos os OBJETOS e INSTÂNCIAS de notas e disciplinas.
-*/
+ */
 public class Disciplina {
 
     private double nota;
