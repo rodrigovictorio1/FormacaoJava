@@ -47,7 +47,7 @@ public class PrimeiraClasseJava {
 			aluno1.setSerieMatriculado(serieMatriculado);
 			aluno1.setNomeEscola(nomeEscola);
 
-			for (int posicao = 1; posicao <= 8; posicao++) {
+			for (int posicao = 1; posicao <= 3; posicao++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina " + posicao + ": ");
 				String notaDisciplina = JOptionPane.showInputDialog("Digite a nota " + posicao + ": ");
 
@@ -78,16 +78,16 @@ public class PrimeiraClasseJava {
 		}
 
 		for (Aluno aluno : alunos) {
-			
+
 			// (aluno.percorraLista().quandoNomeFor("Rodrigo")
 			if (aluno.getNome().equalsIgnoreCase("Rodrigo")) {
-				
+				alunos.remove(aluno);
+				break; // Pare
+			} else {
 				System.out.println(aluno); // Descrição do objeto na memória
 				System.out.println("Média do aluno: " + aluno.getMediaNota());
 				System.out.println("Resultado: " + aluno.getAlunoAprovado2());
 				System.out.println("----------------------------------------------------------------------------");
-				break; // Pare
-				
 			}
 
 			/*
@@ -110,6 +110,16 @@ public class PrimeiraClasseJava {
 			 * System.out.println("Resultado: " + aluno.getAlunoAprovado2());
 			 */
 
+		}
+
+		for (Aluno aluno : alunos) {
+			System.out.println("Alunos que sobraram na lista:");
+			System.out.println(aluno.getNome());
+			System.out.println("Suas disciplinas são: ");
+
+			for (Disciplina disciplina : aluno.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina());
+			}
 		}
 
 		/*
