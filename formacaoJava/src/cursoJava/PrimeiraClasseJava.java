@@ -77,62 +77,19 @@ public class PrimeiraClasseJava {
 			alunos.add(aluno1);
 		}
 
-		for (Aluno aluno : alunos) {
+		for (int pos = 0; pos < alunos.size(); pos++) {
+			Aluno aluno = alunos.get(pos);
 
-			// (aluno.percorraLista().quandoNomeFor("Rodrigo")
-			if (aluno.getNome().equalsIgnoreCase("Rodrigo")) {
-				alunos.remove(aluno);
-				break; // Pare
-			} else {
-				System.out.println(aluno); // Descrição do objeto na memória
-				System.out.println("Média do aluno: " + aluno.getMediaNota());
-				System.out.println("Resultado: " + aluno.getAlunoAprovado2());
-				System.out.println("----------------------------------------------------------------------------");
-			}
+			System.out.println("Aluno: " + aluno.getNome());
+			System.out.println("Média do aluno: " + aluno.getMediaNota());
+			System.out.println("Resultado: " + aluno.getAlunoAprovado2());
+			System.out.println("----------------------------------------------------------------");
 
-			/*
-			 * System.out.println("Nome: " + aluno.getNome());
-			 * System.out.println("Data de Nascimento: " + aluno.getDataNascimento());
-			 * System.out.println("Idade: " + aluno.getIdade());
-			 * System.out.println("Nº da identidade: " + aluno.getRegistroGeral());
-			 * System.out.println("CPF: " + aluno.getNumeroCpf());
-			 * System.out.println("Nome da mãe: " + aluno.getNomeMae());
-			 * System.out.println("Nome do pai: " + aluno.getNomePai());
-			 * System.out.println("Data da matrícula: " + aluno.getDataMatricula());
-			 * System.out.println("Série matriculado: " + aluno.getSerieMatriculado());
-			 * System.out.println("Colégio: " + aluno.getNomeEscola());
-			 * System.out.printf("Média do aluno: %.2f\n", aluno.getMediaNota());
-			 * System.out.println("Resultado: " + (aluno.getAlunoAprovado() ? "Aprovado" :
-			 * "Reprovado")); System.out.println("Resultado: " + aluno.getAlunoAprovado2());
-			 * 
-			 * System.out.println(aluno.toString()); // Descrição do objeto na memória.
-			 * System.out.println("Média do aluno: " + aluno.getMediaNota());
-			 * System.out.println("Resultado: " + aluno.getAlunoAprovado2());
-			 */
-
-		}
-
-		for (Aluno aluno : alunos) {
-			System.out.println("Alunos que sobraram na lista:");
-			System.out.println(aluno.getNome());
-			System.out.println("Suas disciplinas são: ");
-
-			for (Disciplina disciplina : aluno.getDisciplinas()) {
-				System.out.println(disciplina.getDisciplina());
+			for (int posd = 0; posd < aluno.getDisciplinas().size(); posd++) {
+				Disciplina disc = aluno.getDisciplinas().get(posd);
+				System.out.println("Disciplina: " + disc.getDisciplina() + " Nota: " + disc.getNota());
 			}
 		}
-
-		/*
-		 *
-		 * // EQUALS e HASHCODE (Diferenciar e comparar objetos)
-		 *
-		 * Aluno aluno1 = new Aluno(); aluno1.setNome("Rodrigo");
-		 *
-		 * Aluno aluno2 = new Aluno(); aluno2.setNome("Rodrigo");
-		 *
-		 * if (aluno1.equals(aluno2)) { System.out.println("Alunos são iguais."); }else
-		 * { System.out.println("Alunos não são iguais."); }
-		 */
 
 	}
 }
