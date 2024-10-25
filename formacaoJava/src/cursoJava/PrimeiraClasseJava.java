@@ -47,7 +47,7 @@ public class PrimeiraClasseJava {
 			aluno1.setSerieMatriculado(serieMatriculado);
 			aluno1.setNomeEscola(nomeEscola);
 
-			for (int posicao = 1; posicao <= 3; posicao++) {
+			for (int posicao = 1; posicao <= 1; posicao++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Digite o nome da disciplina " + posicao + ": ");
 				String notaDisciplina = JOptionPane.showInputDialog("Digite a nota " + posicao + ": ");
 
@@ -79,6 +79,20 @@ public class PrimeiraClasseJava {
 
 		for (int pos = 0; pos < alunos.size(); pos++) {
 			Aluno aluno = alunos.get(pos);
+			
+			if (aluno.getNome().equalsIgnoreCase("rodrigo")) {
+				Aluno trocar = new Aluno();
+				trocar.setNome("Aluno foi trocado");
+				
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matemática");
+				disciplina.setNota(96);
+				
+				trocar.getDisciplinas().add(disciplina);
+				
+				alunos.set(pos, trocar);
+				aluno = alunos.get(pos);
+			}
 
 			System.out.println("Aluno: " + aluno.getNome());
 			System.out.println("Média do aluno: " + aluno.getMediaNota());
